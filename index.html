@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>titolo</title>
+    <title>Griglia Campo Minato</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="controls">
+        <!-- scegliere la difficoltà -->
+        <select id="difficulty">
+            <option value="1">Difficoltà noob (7x7)</option>
+            <option value="2">Difficoltà normal (9x9)</option>
+            <option value="3">Difficoltà hard (10x10)</option>
+        </select>
+        <!-- bottone genera griglia -->
+        <button id="generateGrid">Genera Griglia</button>
+    </div>
+    <div id="grid"></div>
+    <!-- qui verranno generate le celle -->
     
     <script src="js/script.js"></script>
 </body>
