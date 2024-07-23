@@ -7,10 +7,12 @@ generateGridButton.addEventListener('click', generateGrid);
 let bombPositions;
 let cells;
 let clickCount;
+let totalCells;
+let bombCount;
+let size;
 // scelta difficoltà
 function generateGrid() {
     const difficulty = parseInt(difficultySelect.value);
-    let size, totalCells, bombCount;
 
     switch (difficulty) {
         case 1:
@@ -55,6 +57,7 @@ function generateBombPositions(totalCells, bombCount) {
         const position = Math.floor(Math.random() * totalCells) + 1;
         if (!positions.includes(position)) {
             positions.push(position);
+            console.log(position)
         }
     }
     return positions;
@@ -76,6 +79,11 @@ function handleCellClick(cellNumber) {
         console.log(`Cella cliccata: ${cellNumber}`);
         clickCount++;
         updateClickCounter();
+        
+        console.log(`clickCount: ${clickCount}, totalCells: ${totalCells}, bombCount: ${bombCount}`);
+        if (clickCount === totalCells - bombCount) {
+            alert('Congratulazioni! Hai cliccato tutte le celle senza bombe.');
+        }
     }
 }
 // rivela tutte le bombe dopo esplosione
